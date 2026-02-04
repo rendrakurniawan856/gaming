@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Game | Vortex</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; }
+        .nav-play { height: 60px; background: #1a1a1f; display: flex; align-items: center; padding: 0 20px; box-sizing: border-box; }
+        .back-btn { background: #00e5ff; color: #000; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; text-decoration: none; }
+        .back-btn:hover { background: #fff; }
+        
+        /* Iframe agar penuh layar */
+        .game-container { width: 100%; height: calc(100vh - 60px); position: relative; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-play">
+        <a href="home.html" class="back-btn">← KEMBALI KE HOME</a>
+    </div>
+
+    <div class="game-container">
+        <iframe id="gameFrame" 
+                src="" 
+                allow="autoplay; gamepad; keyboard; fullscreen; clipboard-read; clipboard-write" 
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        const urlAsli = localStorage.getItem('gameUrl');
+        const frame = document.getElementById('gameFrame');
+
+        if (urlAsli) {
+            // Jika link dari CrazyGames, beberapa butuh penanganan khusus
+            // Tapi untuk sekarang kita coba load langsung
+            frame.src = urlAsli;
+        } else {
+            window.location.href = 'home.html';
+        }
+    </script>
+</body>
+</html>

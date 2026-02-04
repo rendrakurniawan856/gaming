@@ -1,0 +1,63 @@
+* { font-family: 'Orbitron', sans-serif; box-sizing: border-box; }
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url("gambar/gaming.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.card {
+    width: 350px; background: rgba(20, 20, 20, 0.95);
+    padding: 30px; border-radius: 15px; text-align: center;
+    color: #00ffff; border: 2px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: 0.3s;
+}
+
+/* Animasi Shake jika Error */
+.error-shake {
+    animation: shake 0.4s;
+    border-color: #ff0055;
+    box-shadow: 0 0 20px #ff0055;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-8px); }
+}
+
+input {
+    width: 100%; padding: 12px; margin-top: 15px;
+    background: #000; border: 1px solid #333; color: #fff;
+    border-radius: 5px; outline: none;
+}
+
+button {
+    width: 100%; padding: 12px; margin-top: 15px;
+    background: #00ffff; border: none; font-weight: bold;
+    cursor: pointer; transition: 0.2s;
+}
+
+button:hover { background: #00cccc; transform: scale(1.02); }
+
+.btn-google { background: #ffffff; color: #000; }
+
+.hidden { display: none; }
+
+p { margin-top: 20px; font-size: 11px; cursor: pointer; }
+p span { color: #00ffff; text-decoration: underline; }

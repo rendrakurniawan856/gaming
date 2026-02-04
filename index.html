@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Gaming Portal - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Orbitron', sans-serif; box-sizing: border-box; }
+        body { margin: 0; height: 100vh; background: #050505; display: flex; justify-content: center; align-items: center; color: #00ffff; }
+        .card { width: 350px; background: #111; padding: 30px; border-radius: 15px; border: 2px solid #00ffff; box-shadow: 0 0 20px #00ffff; text-align: center; }
+        input { width: 100%; padding: 12px; margin-top: 15px; background: #000; border: 1px solid #00ffff; color: #fff; border-radius: 5px; outline: none; }
+        button { width: 100%; padding: 12px; margin-top: 15px; background: #00ffff; border: none; font-weight: bold; cursor: pointer; color: #000; }
+        .btn-google { background: #ff4b2b; color: #fff; }
+        .hidden { display: none; }
+        p { margin-top: 20px; font-size: 11px; cursor: pointer; }
+        .error-shake { animation: shake 0.4s; border-color: #ff0055; box-shadow: 0 0 20px #ff0055; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-8px); } 50% { transform: translateX(8px); } 75% { transform: translateX(-8px); } }
+    </style>
+</head>
+<body>
+    <div class="card" id="login-box">
+        <h2>LOGIN</h2>
+        <input id="loginEmail" type="email" placeholder="Email">
+        <input id="loginPassword" type="password" placeholder="Password">
+        <button id="btnLogin">LOGIN</button>
+        <button id="btnLoginGoogle" class="btn-google">GOOGLE LOGIN</button>
+        <p onclick="toggle('reg')">Belum punya akun? DAFTAR</p>
+    </div>
+
+    <div class="card hidden" id="register-box">
+        <h2>REGISTER</h2>
+        <input id="regName" type="text" placeholder="Nama Lengkap">
+        <input id="regEmail" type="email" placeholder="Email">
+        <input id="regPassword" type="password" placeholder="Password (Min 6 Karakter)">
+        <button id="btnRegister">DAFTAR</button>
+        <p onclick="toggle('log')">Sudah punya akun? LOGIN</p>
+    </div>
+
+    <script type="module" src="auth.js"></script>
+    <script>
+        window.toggle = (mode) => {
+            document.getElementById('login-box').classList.toggle('hidden', mode === 'reg');
+            document.getElementById('register-box').classList.toggle('hidden', mode === 'log');
+        }
+    </script>
+</body>
+</html>
